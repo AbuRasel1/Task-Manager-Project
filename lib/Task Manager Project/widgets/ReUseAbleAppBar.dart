@@ -14,6 +14,7 @@ AppBar ReUseAbleAppBar(context,{bool isTappAble = true }) {
     backgroundColor: Colors.greenAccent,
     //akhane je login korbe tar image,name ,mail address appbar a show korbe
     title: ListTile(
+      contentPadding: EdgeInsets.zero,
       onTap: () {
         if(isTappAble==false){
           return;

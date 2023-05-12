@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +36,7 @@ TextStyle Heading6Style(TextColor){
     fontWeight: FontWeight.w800,
     color: TextColor,
     fontFamily: 'poppins',
-    fontSize: 18,
+    fontSize: 16,
 
   );
 }
@@ -47,7 +46,7 @@ TextStyle Heading1TextStyle(TextColor){
   return TextStyle(
     fontFamily: 'poppins',
     fontWeight: FontWeight.w400,
-    fontSize: 38,
+    fontSize: 24,
     color: TextColor,
   );
 }

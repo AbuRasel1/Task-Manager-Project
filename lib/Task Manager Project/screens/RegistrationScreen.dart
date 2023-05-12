@@ -25,79 +25,82 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return Scaffold(
       body: SafeArea(
           child: BackgroundImage(
-        child: Container(
-          padding: EdgeInsets.all(30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "JOIN With Us",
-                style: Heading1TextStyle(colorDarkBlue),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextFormField(
-                controller: EmailValue,
-                validator: (String? value) {
-                  return null;
-                },
-                decoration: FormFeildStyle("  Email"),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextFormField(
-                controller: FirstNameValue,
-                validator: (String? value) {
-                  return null;
-                },
-                decoration: FormFeildStyle("  First Name"),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextFormField(
-                controller: LastNameValue,
-                validator: (String? value) {
-                  return null;
-                },
-                decoration: FormFeildStyle("  Last Name"),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextFormField(
-                controller: MobileValue,
-                validator: (String? value) {
-                  return null;
-                },
-                decoration: FormFeildStyle("  Mobile"),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextFormField(
-                obscureText: true, //password (..)amon vabe thakbe
-                controller: PasswordValue,
-                validator: (String? value) {
-                  return null;
-                },
-                decoration: FormFeildStyle("  Password"),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              ReUseAbleElevatedButton(onTap: () {}),
-              SizedBox(
-                height: 25,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [HaveAccount()],
-              )
-            ],
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            padding: EdgeInsets.all(30),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "JOIN With Us",
+                  style: Heading1TextStyle(colorDarkBlue),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                TextFormField(
+                  controller: EmailValue,
+                  validator: (String? value) {
+                    return null;
+                  },
+                  decoration: FormFeildStyle("  Email"),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                TextFormField(
+                  controller: FirstNameValue,
+                  validator: (String? value) {
+                    return null;
+                  },
+                  decoration: FormFeildStyle("  First Name"),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                TextFormField(
+                  controller: LastNameValue,
+                  validator: (String? value) {
+                    return null;
+                  },
+                  decoration: FormFeildStyle("  Last Name"),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                TextFormField(
+                  controller: MobileValue,
+                  validator: (String? value) {
+                    return null;
+                  },
+                  decoration: FormFeildStyle("  Mobile"),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                TextFormField(
+                  obscureText: true, //password (..)amon vabe thakbe
+                  controller: PasswordValue,
+                  validator: (String? value) {
+                    return null;
+                  },
+                  decoration: FormFeildStyle("  Password"),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                ReUseAbleElevatedButton(onTap: () {}),
+                SizedBox(
+                  height: 25,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [HaveAccount()],
+                )
+              ],
+            ),
           ),
         ),
       )),
