@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../style/Style.dart';
 import '../widgets/BackGroundImage.dart';
 import '../widgets/ReUseAbleAppBar.dart';
 import '../widgets/ReuseAbleElevatedButton.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfileUpdateScreen extends StatefulWidget {
   const ProfileUpdateScreen({Key? key}) : super(key: key);
@@ -23,8 +26,13 @@ class _ProfileUpdateScreenState extends State<ProfileUpdateScreen> {
 
   TextEditingController PasswordValue = TextEditingController();
 
+  //image pic korar jonno PhotoFile name variable niyeci ata prothome null thakbe
+
+  XFile? photoFile;
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: ReUseAbleAppBar(context, isTappAble: false),
         body: BackgroundImage(
@@ -47,8 +55,19 @@ class _ProfileUpdateScreenState extends State<ProfileUpdateScreen> {
                   //Image Picker feild
                   //(InkWell)use kore onTap function use kora jai
                   InkWell(
-                    onTap: (){
+                    onTap: () async {
+                      final imagePicker = ImagePicker();
+                      //ata async operation mane future a result dibe tai await use koreci
+                      final result = await imagePicker.pickImage(
+                          source: ImageSource.gallery);
 
+                      if (result !=null) {
+
+                        photoFile = result;
+                        setState(() {
+
+                        });
+                      }
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -63,7 +82,20 @@ class _ProfileUpdateScreenState extends State<ProfileUpdateScreen> {
                             ),
                             padding: EdgeInsets.all(12),
                             color: Colors.grey,
-                          )
+                          ),
+                          /* je image nibo oi image ta box a show korbe
+                          ata mobile kaj kore kintu web a error dei
+                          tai comment kore rakhci
+                          */
+
+                         // Image.file(File(photoFile?.path ?? ''),width: 30,height: 30,),
+
+
+
+                          /*
+                          PhotoFile null thakle empty string dekhabe
+                           */
+                          Expanded(child: Text(photoFile?.name ?? "",maxLines: 3,)),
                         ],
                       ),
                     ),

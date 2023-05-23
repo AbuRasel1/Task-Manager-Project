@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'dart:ui';
 
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 
 //all color
@@ -55,6 +57,7 @@ TextStyle Heading1TextStyle(TextColor){
 //Form Feild er style
 InputDecoration FormFeildStyle(label){
   return InputDecoration(
+
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(color: colorGreen),
       borderRadius: BorderRadius.circular(5),
@@ -63,6 +66,7 @@ InputDecoration FormFeildStyle(label){
     filled: true,
 
     enabledBorder: OutlineInputBorder(
+
       borderSide: BorderSide(color: colorWhite),
       borderRadius: BorderRadius.circular(5),
     ),
@@ -71,6 +75,7 @@ InputDecoration FormFeildStyle(label){
     
     border: OutlineInputBorder(borderRadius: BorderRadius.circular(5),
       borderSide: BorderSide.none,
+
     ),
 
 
@@ -110,3 +115,17 @@ TextStyle AllButtonTextStyle(){
 //     ),
 //   );
 // }
+
+//toast message
+void ToastMessage(msg){
+   Fluttertoast.showToast(
+        msg: msg,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+        fontSize: 16.0
+    );
+
+}
